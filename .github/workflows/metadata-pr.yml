@@ -7,15 +7,15 @@ on:
 
 jobs:
   annotate-pr:
-    name: Annotates pull request with metadata
-    runs-on: ubuntu-latest    
+    name: Annotates PR
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Annotate PR
+      - name: Annotate PR with metadata
         uses: amalay/custom-github-action-001@main
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
-          pr_number: ${{ github.event.number }}
+          pr_number: ${{ github.event.number }}          
           token: ${{ secrets.GITHUB_TOKEN }}
           
